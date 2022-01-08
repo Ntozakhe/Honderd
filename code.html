@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Kenny Ntozakhe</title>
+    <title>HONDERD: A Coding Project By Kenny Ntozakhe</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,16 +12,21 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/site.css">
-    <link rel="icon" type="img/png" href="/img/icon white.png">
+    <link rel="icon" type="img/png" href="/img/running.png">
     <link rel="stylesheet" href="/css/prism.css">
+
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
     <!-- Nav Section-->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/img/favicon-32x32.png" alt="logo" class="d-inline-block"
-                    width="30" height="24"> Kenny Ntozakhe</a>
+            <a class="navbar-brand logoFont" href="/index.html"><img src="/img/android-chrome-512x512.png" alt="logo"
+                    class="d-inline-block" width="30" height="24"> HONDERD</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -57,16 +62,77 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            function helloWorld(){
-                                alert("Hello World");
+                            //get the values from the page
+                            //start or controller function
+                            function getValues(){
+                                //get values from the page
+                                let startValue = document.getElementById("startValue").value;
+                                let endValue = document.getElementById("endValue").value;
+                                
+                            
+                                // Validating our inputs by : parse int0 integers
+                                startValue = parseInt(startValue);
+                                endValue = parseInt(endValue);
+                            
+                                if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+                                    //we call generateNUmbers 
+                                    let numbers = generateNumbers(startValue,endValue);
+                                    //we call displayNumbers
+                            
+                                    displayNumber(numbers);
+                                } else {
+                                    alert("you must enter integers")
+                                }    
+                            }
+                            
+                            
+                            //generate numbers from the start value to the end va;ues
+                            //logic function
+                            function generateNumbers(sValue,eValue){
+                                
+                                let numbers = [];
+                            //we want to get all numbers from satrt to end.
+                            
+                                for(let i=sValue; i<=eValue;i++){
+                                    //this will execute in a loop until index is equal to end value.
+                                    numbers.push(i)
+                                }
+                            
+                                return numbers;
+                            }
+                            
+                            
+                            
+                            //display the numbers and mark the even numbers bold
+                            //dispaly function
+                            function displayNumber(numbers){
+                            
+                                let templateRows = "";
+                            
+                                for (let index = 0; index < numbers.length; index++) {
+                                    let element = numbers[index];
+                                    let className = "even";
+                                    if(element % 2 === 0){
+                                        className = "even";
+                                    }else{
+                                        className = "odd";
+                                    }
+                                    templateRows += `<tr><td class="${className}">${element}</td></tr>`
+                            
+                                    document.getElementById("results").innerHTML = templateRows;
+                                }
                             }
                         </code>
                     </pre>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 mt-3">
                     <p>The code is structured in one title:</p>
-                    <h5>Hello World</h5>
-                    <p>helloWorld is a Function that displays a message of "Hello World"</p>
+                    <h5>getValues()</h5>
+                    <p> is a Function that collects data entered by the user. It then validates the user input and when satisfied, it calls other functions  </p>
+                    <h5>generateNumbers()</h5>
+                    <p>is a function that will recieve the user input as arguments and then process the input using a loop and putiing all the generated numbers into an array</p>
+                    <h5>displayNumbers()</h5>
+                    <p>is a function that is resposible for dispalying the numbers and BOLDing the even nmbers.</p>
                 </div>
             </div>
         </div>
@@ -84,7 +150,7 @@
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center">
-                    <img src="/img/Capture5.PNG" alt="Kenny Ntozakhe logo" height="40" width="300">
+                    <img src="/img/this One logo.png" alt="Honderd App logo" height="40" width="150">
                 </div>
                 <div class="col d-flex justify-content-center justify-content-md-end align-items-center">
                     <div class="row ">

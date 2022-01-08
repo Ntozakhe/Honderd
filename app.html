@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Kenny Ntozakhe</title>
+    <title>HONDERD: A Coding Project By Kenny Ntozakhe</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,15 +12,20 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/site.css">
-    <link rel="icon" type="img/png" href="/img/icon white.png">
+    <link rel="icon" type="img/png" href="/img/running.png">
+
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
     <!-- Nav Section-->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/img/favicon-32x32.png" alt="logo" class="d-inline-block"
-                    width="30" height="24"> Kenny Ntozakhe</a>
+            <a class="navbar-brand logoFont" href="/index.html"><img src="/img/android-chrome-512x512.png" alt="logo"
+                    class="d-inline-block" width="30" height="24"> HONDERD</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link "  href="/index.html" id="effect">Home</a>
+                        <a class="nav-link " href="/index.html" id="effect">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/app.html" id="effect">The App</a>
@@ -50,8 +55,48 @@
 
     <!-- Main Section-->
     <main class="flex-shrink-0">
-        <div class="container">
+        <div class="container mt-5">
+            <div class="row row-cols-1 row-cols-lg-2 ">
+                <div class="col col-lg-4">
+                    <h1>HONDERD: A Coding Project</h1>
+                    <h4 class="lead">
+                        Live life one loop at a time. A javascript excercise using loops. Write a program that
+                        displays
+                        numbers from 0 to 100. Display the even numbers in <strong>BOLD</strong>.
+                    </h4>
+                    <h2 class="mt-5 border-bottom border=2">Instructions</h2>
+                    <p>Enter a Starting Value and an Ending Value. Press the button and the values will appear.</p>
+                </div>
+                <div class="col col-lg-8  border-start">
+                    <div>
+                        <h5>Enter Values:</h5>
+                        <form action="@" class="row gy-2 gx-3">
 
+                            <div class="col">
+                                <input type="number" class="form-control" id="startValue" placeholder="Staring Value"
+                                    value="0" aria-label="Staring Value">
+                            </div>
+                            <div class="col">
+                                <input type="number" class="form-control" id="endValue" placeholder="Ending Value"
+                                    value="100" aria-label="Staring Value">
+                            </div>
+                            <div class="col-12 d-flex justify-content-lg-end mt-3">
+                                <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Display the
+                                    Honderd</button>
+                            </div>
+
+                        </form>
+                        <h2 class="mt-5 border-bottom border-2">Results:</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover table-sm">
+                                <tbody id="results">
+                                    <!--We're using Javascript to dispaly the results. JS will create the <tr> and <td>-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -67,7 +112,7 @@
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center">
-                    <img src="/img/Capture5.PNG" alt="Kenny Ntozakhe logo" height="40" width="300">
+                    <img src="/img/this One logo.png" alt="Honderd App logo" height="40" width="150">
                 </div>
                 <div class="col d-flex justify-content-center justify-content-md-end align-items-center">
                     <div class="row ">
@@ -90,6 +135,9 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="/js/site.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValues)
+    </script>
 </body>
 
 </html>

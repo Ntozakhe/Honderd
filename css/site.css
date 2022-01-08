@@ -30,12 +30,12 @@ footer .social>a {
 
 footer .social>a:hover {
     opacity: 0.9;
-    color: var(--secondary-color);
+    color: #ff0f0f;
 }
 
 nav #effect:hover {
     opacity: 0.9;
-    color: var(--secondary-color);
+    color: #ff0f0f;
 
 }
 
@@ -52,11 +52,24 @@ h6 {
     color: var(--secondary-color);
 }
 
+.logoFont {
+    font-family: 'Racing Sans One', cursive;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word;
+}
+
+.odd{
+    font-weight: 100;
+}
+
+.even{
+    font-weight: bold;
+    font-size: large;
 }
 
 
